@@ -17,40 +17,40 @@ void Showbyte(const unsigned char* A, int size) {
 }
 void DPOD(long long a,long long size) {
     long long mask = size * 8ll - 1ll;
-    printf("Число %lld\n", a);
+    printf("Р§РёСЃР»Рѕ %lld\n", a);
     printf("DUMP|");
     unsigned char* A = (unsigned char*)&a;
     Showbyte(A, size);
     if (a < 0) {
         a = ~a + 1ll;
         a |=  (1ll << mask);
-        printf("  ПК|");
+        printf("  РџРљ|");
         Showbyte(A, size);
         a &= ~(1ll << mask);
         a = ~a;
-        printf("  ОК|");
+        printf("  РћРљ|");
         Showbyte(A, size);
         a +=1;
-        printf("  ДК|");
+        printf("  Р”Рљ|");
         Showbyte(A, size);
     }
     else {
-        printf("  ПК|");
+        printf("  РџРљ|");
         Showbyte(A, size);
-        printf("  ОК|");
+        printf("  РћРљ|");
         Showbyte(A, size);
-        printf("  ДК|");
+        printf("  Р”Рљ|");
         Showbyte(A, size);
     }
 }
 void DUMP_float(float a,int size) {
-    printf("Число %Lf\n", a);
+    printf("Р§РёСЃР»Рѕ %Lf\n", a);
     unsigned char* A = (unsigned char*)&a;
     printf("DUMP|");
     Showbyte(A, size);
 }
 void DUMP_double(long double a, int size) {
-    printf("Число %Lf\n", a);
+    printf("Р§РёСЃР»Рѕ %Lf\n", a);
     unsigned char* A = (unsigned char*)&a;
     printf("DUMP|");
     Showbyte(A, size);
@@ -59,32 +59,32 @@ void DUMP_double(long double a, int size) {
 void Lab201(){
     short number;
     int select = -1;
-    printf("Введите число [-32000;32000]:\n>>");
+    printf("Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ [-32000;32000]:\n>>");
     scanf_s("%hd", &number);
     while (select != 0) {
         printf("%hd |", number);
         unsigned char* A = (unsigned char*)&number;
         Showbyte(A, sizeof(number));
-        printf("1.Установить бит в 1\n2.Сбросить бит в 0\n3.Опросить бит\n4.Изменить бит\n0.Выход\n>>");
+        printf("1.РЈСЃС‚Р°РЅРѕРІРёС‚СЊ Р±РёС‚ РІ 1\n2.РЎР±СЂРѕСЃРёС‚СЊ Р±РёС‚ РІ 0\n3.РћРїСЂРѕСЃРёС‚СЊ Р±РёС‚\n4.РР·РјРµРЅРёС‚СЊ Р±РёС‚\n0.Р’С‹С…РѕРґ\n>>");
         scanf_s("%d", &select);
         switch (select) {
         case 1: {
             int a;
-            printf("Введите номер бита:\n>>");
+            printf("Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ Р±РёС‚Р°:\n>>");
             scanf_s("%d", &a);
             number |= 1 << 16 - a;
             break;
         }
         case 2: {
             int a;
-            printf("Введите номер бита:\n>>");
+            printf("Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ Р±РёС‚Р°:\n>>");
             scanf_s("%d", &a);
             number &= ~(1 << 16 - a);
             break;
         }
         case 3: {
             int showbit;
-            printf("Введите номер бита:\n>>");
+            printf("Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ Р±РёС‚Р°:\n>>");
             scanf_s("%d", &showbit);
             printf("%hd |", number);
             for (int i = 1; i < 17; i++) {
@@ -100,7 +100,7 @@ void Lab201(){
         }
         case 4: {
             int a;
-            printf("Введите номер бита:\n>>");
+            printf("Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ Р±РёС‚Р°:\n>>");
             scanf_s("%d", &a);
             number ^= 1 << 16 - a;
             break;
@@ -110,17 +110,17 @@ void Lab201(){
     system("cls");
 }
 void Lab202() {
-    printf("Введите число short:\n>>");
+    printf("Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ short:\n>>");
     short a;
     scanf_s("%hi", &a);
     DPOD(a, sizeof(a));
     DPOD(-a, sizeof(a));
-    printf("Введите число int:\n>>");
+    printf("Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ int:\n>>");
     int b;
     scanf_s("%i", &b);
     DPOD(b, sizeof(b));
     DPOD(-b, sizeof(b));
-    printf("Введите число long long:\n>>");
+    printf("Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ long long:\n>>");
     long long c;
     scanf_s("%lld", &c);
     printf("%d", sizeof(c));
@@ -129,17 +129,17 @@ void Lab202() {
 }
 void Lab203() {
     float s;
-    printf("Введите число float:\n>>");
+    printf("Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ float:\n>>");
     scanf_s("%f", &s);
     DUMP_float(s, sizeof(s));
     DUMP_float(-s, sizeof(s));
     double e;
-    printf("Введите число double:\n>>");
+    printf("Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ double:\n>>");
     scanf_s("%lf", &e);
     DUMP_double(e, sizeof(e));
     DUMP_double(-e, sizeof(e));
     long double f;
-    printf("Введите число long double:\n>>");
+    printf("Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ long double:\n>>");
     scanf_s("%Lf", &f);
     DUMP_double(f, sizeof(f));
     DUMP_double(-f, sizeof(f));
@@ -167,7 +167,7 @@ void Lab204() {
 void Hello2() {
     int v = -1;
     while (v != 0) {
-        printf("1.Действия с short\n2.Дамп (short, int, long long)\n3.Дамп (float , double, long double)\n>>");
+        printf("1.Р”РµР№СЃС‚РІРёСЏ СЃ short\n2.Р”Р°РјРї (short, int, long long)\n3.Р”Р°РјРї (float , double, long double)\n>>");
         scanf_s("%d", &v);
         switch (v)
         {

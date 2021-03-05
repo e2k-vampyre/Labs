@@ -23,7 +23,7 @@ int Strlen4(char* A) {
     return s-A;
 }
 void Strlen() {
-    printf("Тестирование функции strlen\n\n");
+    printf("РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ С„СѓРЅРєС†РёРё strlen\n\n");
     char str[][C] = {"abcd1234",""};
     for (int i = 0; i < 2; i++) {
         printf("strlen1(\"%s\")=%d\n", str[i], Strlen1(str[i]));
@@ -81,7 +81,7 @@ int Strcmp4(char* A,char* B) {
     }
 }
 void Strcmp() {
-    printf("Тестирование функции strcmp\n\n");
+    printf("РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ С„СѓРЅРєС†РёРё strcmp\n\n");
     char str1[][C] = { "", "BB", "AAA", "CCC", "AAA", "AA"};
     char str2[][C] = { "", "AAA", "AA", "AAA", "DD", "FFFF"};
     for (int i = 0; i < 6; i++) {
@@ -119,7 +119,7 @@ char* Strcopy4(char* dest, char* src) {
     }
 }
 void Strcopy() {
-    printf("Тестирование функции strcopy\n\n");
+    printf("РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ С„СѓРЅРєС†РёРё strcopy\n\n");
     char src[][C] = { "","abcd12" };
     char dest[C] = { "" };
     for (int i = 0; i < 2; i++) {
@@ -192,7 +192,7 @@ char* Strdel4(char* dest, char* src, int k, int p) {
     return dest;
 }
 void Strdel() {
-    printf("Тестирование функции strdel\n\n");
+    printf("РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ С„СѓРЅРєС†РёРё strdel\n\n");
     char src[][C] = { "","abcd12" };
     char dest[C] = { "" };
     int k[5] = {3,-1,8,0,6};
@@ -280,7 +280,7 @@ void Clear(char* dest) {
     for (int i = Strlen1(dest)-1; i >= 0; i--) dest[i] = '\0';
 }
 void Strins() {
-    printf("Тестирование функции strins\n\n");
+    printf("РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ С„СѓРЅРєС†РёРё strins\n\n");
     char src[][C] = { "","abcdef" };
     char sub[][C] = { "","123456" };
     char dest[C] = { "" };
@@ -371,7 +371,7 @@ int Strpos4(char* src, char* sub) {
     return a;
 }
 void Strpos() {
-    printf("Тестирование функции strpos\n\n");
+    printf("РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ С„СѓРЅРєС†РёРё strpos\n\n");
     char src[][C] = { "","abcd12cd34" };
     char sub[][C] = { "","ef","abcd12cd34","12","3","cd" };
     for (int i = 0; i < 2; i++) {
