@@ -1,4 +1,3 @@
-#include <fstream>
 #define N 1000000
 
 void Showbyte(const unsigned char* A, int size) {
